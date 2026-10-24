@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Strength of Spirit — мужской барбершоп в Белгороде</title>
+<meta name="description" content="Мужской барбершоп Strength of Spirit в Белгороде, ул. Щорса, 10. Классическая стрижка от 1000 ₽, борода и усы от 1500 ₽. Ежедневно 10:00–21:00.">
+<meta name="theme-color" content="#151515">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#151515;
+  --surface:#1D1D1D;
+  --line:#343434;
+  --text:#ECE8E1;
+  --muted:#A19C93;
+  --accent:#A9482A;
+  --accent-hover:#BC5434;
+  --s1:8px; --s2:16px; --s3:24px; --s4:32px; --s5:40px; --s6:48px; --s8:64px; --s10:80px; --s12:96px;
+  --font:"Onest",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font);font-size:16px;line-height:24px;font-weight:400;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3,p,ul,dl,dd,figure{margin:0;padding:0}
+ul{list-style:none}
+.wrap{width:100%;max-width:1200px;margin:0 auto;padding:0 var(--s2)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:2px solid var(--accent-hover);outline-offset:4px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 var(--s4);background:var(--accent);color:var(--text);border:0;border-radius:0;font:700 16px/24px var(--font);letter-spacing:.04em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background .15s}
+.btn:hover{background:var(--accent-hover)}
+.btn:disabled{opacity:.6;cursor:default}
+.btn--sm{min-height:40px;padding:0 var(--s2);font-size:13px;letter-spacing:.06em}
+.btn--line{background:transparent;border:1px solid var(--text)}
+.btn--line:hover{background:var(--text);color:var(--bg)}
+
+/* header */
+.top{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-weight:800;font-size:15px;line-height:16px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none}
+.nav{display:none}
+.top-right{display:flex;align-items:center;gap:var(--s3)}
+.top-tel{display:none;text-decoration:none;font-weight:500}
+
+/* hero */
+.hero{padding:var(--s4) 0 var(--s6)}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:var(--s3)}
+.kicker{font-size:13px;line-height:16px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.hero h1{font-weight:800;font-size:15vw;line-height:.92;letter-spacing:-.02em;text-transform:uppercase}
+.hero h1 span{display:block}
+.lead{font-size:18px;line-height:24px;color:var(--text);max-width:440px}
+.hero-photo{position:relative;background:var(--surface)}
+.hero-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 12%}
+.hero-photo figcaption{position:absolute;left:0;bottom:0;padding:var(--s1) var(--s2);background:var(--bg);font-size:13px;line-height:16px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+.ticket{display:grid;grid-template-columns:1fr;border:1px solid var(--line);background:var(--surface)}
+.ticket-cell{padding:var(--s2) var(--s3);border-bottom:1px dashed var(--line)}
+.ticket-cell dt{font-size:12px;line-height:16px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.ticket-cell dd{margin-top:var(--s1);font-weight:700;font-size:20px;line-height:24px}
+.ticket-cta{padding:var(--s3)}
+.ticket-cta .btn{width:100%}
+
+/* sections */
+.sec{padding:var(--s8) 0;border-top:1px solid var(--line)}
+.sec-head{display:flex;flex-direction:column;gap:var(--s1);margin-bottom:var(--s5)}
+.sec-no{font-size:13px;line-height:16px;letter-spacing:.14em;color:var(--muted)}
+.sec h2{font-weight:800;font-size:40px;line-height:40px;letter-spacing:-.01em;text-transform:uppercase}
+.sec-note{margin-top:var(--s2);color:var(--muted);max-width:480px}
+
+/* services */
+.price-list{border-top:1px solid var(--text)}
+.price-row{display:grid;grid-template-columns:1fr auto;gap:var(--s1) var(--s2);padding:var(--s3) 0;border-bottom:1px solid var(--line)}
+.price-name{grid-column:1/-1;font-weight:700;font-size:24px;line-height:32px}
+.price-desc{grid-column:1/-1;color:var(--muted)}
+.price-time{align-self:end;color:var(--muted)}
+.price-sum{font-weight:800;font-size:28px;line-height:32px;text-align:right;white-space:nowrap}
+
+/* masters */
+.masters{display:grid;grid-template-columns:1fr;gap:var(--s5)}
+.master img{width:100%;aspect-ratio:4/5;object-fit:cover;background:var(--surface)}
+.master h3{margin-top:var(--s2);font-weight:800;font-size:28px;line-height:32px;text-transform:uppercase}
+.master p{margin-top:var(--s1);color:var(--muted)}
+.master-link{display:inline-block;margin-top:var(--s2);padding-bottom:4px;border-bottom:2px solid var(--accent);font-weight:700;text-decoration:none}
+.master-link:hover{border-bottom-color:var(--text)}
+
+/* work */
+.work{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s1)}
+.work figure{background:var(--surface)}
+.work img{width:100%;object-fit:cover}
+.work-main{grid-column:1/-1}
+.work-main img{aspect-ratio:4/5;object-position:50% 10%}
+.work-sm img{aspect-ratio:3/4}
+.work-cap{margin-top:var(--s3);max-width:520px;color:var(--muted)}
+.work-cap b{display:block;margin-bottom:var(--s1);color:var(--text);font-weight:700;font-size:20px;line-height:24px}
+
+/* booking */
+.book{display:grid;grid-template-columns:1fr;gap:var(--s5)}
+.form{display:grid;gap:var(--s3)}
+.field{display:grid;gap:var(--s1)}
+.field label{font-size:12px;line-height:16px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.field input,.field select{width:100%;height:56px;padding:0 var(--s2);background:var(--surface);color:var(--text);border:1px solid var(--line);border-radius:0;font:500 18px/24px var(--font);appearance:none;-webkit-appearance:none}
+.field select{background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 24px) 24px,calc(100% - 18px) 24px;background-size:6px 6px;background-repeat:no-repeat;padding-right:var(--s6)}
+.field input:focus,.field select:focus{outline:0;border-color:var(--text)}
+.field input::placeholder{color:#6F6A62}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.consent{display:grid;grid-template-columns:24px 1fr;gap:var(--s2);align-items:start;font-size:14px;line-height:24px;color:var(--muted)}
+.consent input{width:24px;height:24px;margin:0;accent-color:var(--accent)}
+.consent a{color:var(--text)}
+.form-msg{min-height:24px;font-weight:500}
+.form-msg.ok{color:var(--text)}
+.form-msg.err{color:#E58A6A}
+.form-side{border-top:1px solid var(--text);padding-top:var(--s3)}
+.form-side p{color:var(--muted)}
+.form-side p+p{margin-top:var(--s2)}
+.form-side strong{display:block;margin-bottom:var(--s1);color:var(--text);font-size:20px;line-height:24px}
+
+/* contacts */
+.contacts{display:grid;grid-template-columns:1fr;gap:var(--s4)}
+.c-list{display:grid;gap:var(--s3)}
+.c-list dt{font-size:12px;line-height:16px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.c-list dd{margin-top:var(--s1);font-weight:700;font-size:24px;line-height:32px}
+.c-list a{text-decoration:none;border-bottom:2px solid var(--accent)}
+.c-actions{display:flex;flex-wrap:wrap;gap:var(--s2)}
+footer{padding:var(--s4) 0 var(--s6);border-top:1px solid var(--line);color:var(--muted);font-size:14px;line-height:24px}
+footer .wrap{display:flex;flex-direction:column;gap:var(--s1)}
+
+/* tablet / desktop */
+@media (min-width:768px){
+  .wrap{padding:0 var(--s4)}
+  .top-tel{display:inline}
+  .sec h2{font-size:56px;line-height:56px}
+  .masters{grid-template-columns:repeat(3,1fr);gap:var(--s3)}
+  .ticket{grid-template-columns:repeat(3,1fr) auto}
+  .ticket-cell{border-bottom:0;border-right:1px dashed var(--line)}
+  .ticket-cta{display:flex;align-items:center;padding:var(--s3)}
+  .ticket-cta .btn{width:auto}
+  .price-row{grid-template-columns:1.2fr 1.4fr 120px 160px;align-items:center;gap:var(--s3)}
+  .price-name,.price-desc{grid-column:auto}
+  .price-time{align-self:center}
+  .book{grid-template-columns:1fr 1fr;gap:var(--s8);align-items:start}
+  .contacts{grid-template-columns:1fr 1fr;gap:var(--s8)}
+  footer .wrap{flex-direction:row;justify-content:space-between}
+}
+@media (min-width:1024px){
+  .nav{display:flex;gap:var(--s4)}
+  .nav a{font-size:14px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--muted)}
+  .nav a:hover{color:var(--text)}
+  .hero{padding:var(--s6) 0 var(--s10)}
+  .hero-grid{grid-template-columns:7fr 5fr;grid-template-rows:auto auto auto 1fr auto;column-gap:var(--s8);row-gap:var(--s3)}
+  .kicker{grid-column:1;grid-row:1}
+  .hero h1{grid-column:1;grid-row:2;font-size:clamp(72px,8.4vw,120px)}
+  .lead{grid-column:1;grid-row:3;font-size:20px;line-height:32px}
+  .hero-photo{grid-column:2;grid-row:1/5}
+  .hero-photo img{aspect-ratio:4/5}
+  .ticket{grid-column:1/-1;grid-row:5;margin-top:var(--s3)}
+  .ticket-cell{padding:var(--s3) var(--s4)}
+  .sec{padding:var(--s12) 0}
+  .work{grid-template-columns:repeat(4,1fr);grid-template-rows:1fr 1fr;gap:var(--s2)}
+  .work-main{grid-column:1/3;grid-row:1/3}
+  .work-sm{position:relative}
+  .work-sm img{position:absolute;inset:0;height:100%;aspect-ratio:auto}
+  .work-sm:nth-of-type(4){grid-column:3/5}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">Strength of Spirit</a>
+    <nav class="nav" aria-label="Разделы">
+      <a href="#services">Услуги</a>
+      <a href="#masters">Мастера</a>
+      <a href="#work">Работы</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <div class="top-right">
+      <a class="top-tel" href="tel:+79805500445">+7 980 550-04-45</a>
+      <a class="btn btn--sm" href="#booking">Записаться</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero" aria-labelledby="h1">
+  <div class="wrap">
+    <div class="hero-grid">
+      <p class="kicker">Мужской барбершоп · Белгород</p>
+      <h1 id="h1"><span>Strength</span><span>of Spirit</span></h1>
+      <p class="lead">Мужская стрижка и борода без очередей. Оставьте имя и телефон — подтвердим время звонком.</p>
+
+      <figure class="hero-photo">
+        <img src="img/work-front.jpg" width="650" height="1280" alt="Фактурная многослойная стрижка с удлинённой чёлкой, вид спереди">
+        <figcaption>Работа недели</figcaption>
+      </figure>
+
+      <dl class="ticket">
+        <div class="ticket-cell"><dt>Адрес</dt><dd>ул. Щорса, 10</dd></div>
+        <div class="ticket-cell"><dt>Часы</dt><dd>10:00–21:00</dd></div>
+        <div class="ticket-cell"><dt>Цена</dt><dd>1 000–2 000 ₽</dd></div>
+        <div class="ticket-cta"><a class="btn" href="#booking">Записаться</a></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="services" aria-labelledby="h-services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-no">01</span>
+      <h2 id="h-services">Услуги и цены</h2>
+      <p class="sec-note">Называем цену до начала. Если стрижка сложнее обычной, мастер скажет об этом сразу.</p>
+    </div>
+    <ul class="price-list">
+      <li class="price-row">
+        <h3 class="price-name">Классическая мужская стрижка</h3>
+        <p class="price-desc">Подбор формы под вашу голову и финальная укладка.</p>
+        <span class="price-time">60 мин</span>
+        <span class="price-sum">от 1 000 ₽</span>
+      </li>
+      <li class="price-row">
+        <h3 class="price-name">Моделирование бороды и усов</h3>
+        <p class="price-desc">Форма, контур и длина бороды и усов.</p>
+        <span class="price-time">40 мин</span>
+        <span class="price-sum">от 1 500 ₽</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" id="masters" aria-labelledby="h-masters">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-no">02</span>
+      <h2 id="h-masters">Мастера</h2>
+      <p class="sec-note">Выберите мастера — он сразу подставится в запись.</p>
+    </div>
+    <ul class="masters">
+      <li class="master">
+        <img src="img/master-1.svg" width="800" height="1000" alt="Фото мастера Артёма" loading="lazy">
+        <h3>Артём</h3>
+        <p>Старший барбер. Классические стрижки.</p>
+        <a class="master-link" href="#booking" data-master="Артём">Записаться к Артёму</a>
+      </li>
+      <li class="master">
+        <img src="img/master-2.svg" width="800" height="1000" alt="Фото мастера Игоря" loading="lazy">
+        <h3>Игорь</h3>
+        <p>Барбер. Стрижки и борода.</p>
+        <a class="master-link" href="#booking" data-master="Игорь">Записаться к Игорю</a>
+      </li>
+      <li class="master">
+        <img src="img/master-3.svg" width="800" height="1000" alt="Фото мастера Макса" loading="lazy">
+        <h3>Макс</h3>
+        <p>Барбер. Борода и усы.</p>
+        <a class="master-link" href="#booking" data-master="Макс">Записаться к Максу</a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" id="work" aria-labelledby="h-work">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-no">03</span>
+      <h2 id="h-work">Работа</h2>
+    </div>
+    <div class="work">
+      <figure class="work-main"><img src="img/work-front.jpg" width="650" height="1280" alt="Многослойная стрижка, вид спереди" loading="lazy"></figure>
+      <figure class="work-sm"><img src="img/work-side.jpg" width="370" height="448" alt="Та же стрижка, профиль слева" loading="lazy"></figure>
+      <figure class="work-sm"><img src="img/work-profile.jpg" width="370" height="426" alt="Та же стрижка, профиль справа" loading="lazy"></figure>
+      <figure class="work-sm"><img src="img/work-back.jpg" width="370" height="398" alt="Та же стрижка, вид сзади" loading="lazy"></figure>
+    </div>
+    <p class="work-cap"><b>Фактурная многослойная стрижка</b>Удлинённая чёлка, мягкий переход на висках, подвижный объём на макушке. Фас, два профиля и затылок.</p>
+  </div>
+</section>
+
+<section class="sec" id="booking" aria-labelledby="h-booking">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-no">04</span>
+      <h2 id="h-booking">Запись</h2>
+    </div>
+    <div class="book">
+      <form class="form" id="lead-form" novalidate>
+        <div class="field">
+          <label for="f-name">Имя</label>
+          <input id="f-name" name="name" type="text" autocomplete="given-name" placeholder="Как к вам обращаться" required minlength="2" maxlength="60">
+        </div>
+        <div class="field">
+          <label for="f-phone">Телефон</label>
+          <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__" required>
+        </div>
+        <div class="field">
+          <label for="f-master">Мастер</label>
+          <select id="f-master" name="master">
+            <option value="Любой мастер">Любой мастер</option>
+            <option value="Артём">Артём</option>
+            <option value="Игорь">Игорь</option>
+            <option value="Макс">Макс</option>
+          </select>
+        </div>
+        <div class="hp" aria-hidden="true"><label>Сайт<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+        <button class="btn" type="submit" id="f-submit">Записаться</button>
+        <label class="consent">
+          <input type="checkbox" name="consent" id="f-consent" required>
+          <span>Я согласен на обработку персональных данных в соответствии с <a href="privacy.html" target="_blank" rel="noopener">Политикой конфиденциальности</a>.</span>
+        </label>
+        <p class="form-msg" id="f-msg" role="status" aria-live="polite"></p>
+      </form>
+      <div class="form-side">
+        <p><strong>Что будет дальше</strong>Мы перезвоним в рабочее время, согласуем день и час и подтвердим запись.</p>
+        <p>Предпочитаете позвонить сами: <a href="tel:+79805500445">+7 980 550-04-45</a>, ежедневно с 10:00 до 21:00.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="contacts" aria-labelledby="h-contacts">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-no">05</span>
+      <h2 id="h-contacts">Как нас найти</h2>
+    </div>
+    <div class="contacts">
+      <dl class="c-list">
+        <div><dt>Адрес</dt><dd>Белгород, ул. Щорса, 10</dd></div>
+        <div><dt>Часы работы</dt><dd>10:00–21:00</dd></div>
+        <div><dt>Телефон</dt><dd><a href="tel:+79805500445">+7 980 550-04-45</a></dd></div>
+      </dl>
+      <div class="c-actions">
+        <a class="btn" href="#booking">Записаться</a>
+        <a class="btn btn--line" href="https://yandex.ru/maps/?text=%D0%91%D0%B5%D0%BB%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%A9%D0%BE%D1%80%D1%81%D0%B0%2C%2010" target="_blank" rel="noopener">Построить маршрут</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Strength of Spirit, Белгород</span>
+    <a href="privacy.html">Политика конфиденциальности</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var form = document.getElementById('lead-form');
+  var nameEl = document.getElementById('f-name');
+  var phoneEl = document.getElementById('f-phone');
+  var masterEl = document.getElementById('f-master');
+  var consentEl = document.getElementById('f-consent');
+  var btn = document.getElementById('f-submit');
+  var msg = document.getElementById('f-msg');
+
+  function say(text, kind) {
+    msg.textContent = text;
+    msg.className = 'form-msg' + (kind ? ' ' + kind : '');
+  }
+
+  // Мастер из ссылки в карточке подставляется в форму
+  document.querySelectorAll('[data-master]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      masterEl.value = a.getAttribute('data-master');
+      setTimeout(function () { nameEl.focus({ preventScroll: true }); }, 400);
+    });
+  });
+
+  // Маска телефона +7 (999) 123-45-67
+  function digitsOf(v) {
+    var d = v.replace(/\D/g, '');
+    if (d.charAt(0) === '8') d = '7' + d.slice(1);
+    if (d && d.charAt(0) !== '7') d = '7' + d;
+    return d.slice(0, 11);
+  }
+  function mask(d) {
+    if (!d) return '';
+    var out = '+7';
+    if (d.length > 1) out += ' (' + d.slice(1, 4);
+    if (d.length >= 5) out += ') ' + d.slice(4, 7);
+    if (d.length >= 8) out += '-' + d.slice(7, 9);
+    if (d.length >= 10) out += '-' + d.slice(9, 11);
+    return out;
+  }
+  phoneEl.addEventListener('input', function () {
+    phoneEl.value = mask(digitsOf(phoneEl.value));
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    say('');
+    var name = nameEl.value.trim();
+    var digits = digitsOf(phoneEl.value);
+
+    if (name.length < 2) { say('Введите имя.', 'err'); nameEl.focus(); return; }
+    if (digits.length !== 11) { say('Введите телефон полностью: +7 и 10 цифр.', 'err'); phoneEl.focus(); return; }
+    if (!consentEl.checked) { say('Нужно согласие на обработку персональных данных.', 'err'); consentEl.focus(); return; }
+
+    btn.disabled = true;
+    btn.textContent = 'Отправляем…';
+
+    var payload = {
+      name: name,
+      phone: '+' + digits,
+      master: masterEl.value,
+      consent: true,
+      website: form.elements.website.value
+    };
+
+    fetch('/api/lead', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    }).then(function (r) {
+      return r.json().catch(function () { return {}; }).then(function (data) {
+        if (!r.ok || !data.ok) throw new Error(data.error || 'fail');
+        form.reset();
+        say('Заявка принята. Мы скоро перезвоним.', 'ok');
+      });
+    }).catch(function () {
+      say('Не удалось отправить. Позвоните нам: +7 980 550-04-45.', 'err');
+    }).then(function () {
+      btn.disabled = false;
+      btn.textContent = 'Записаться';
+    });
+  });
+})();
+</script>
+</body>
+</html>
